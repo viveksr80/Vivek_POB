@@ -1,0 +1,297 @@
+======================================================================
+
+INBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookResponseMessage xmlns="http://www.consol.com/schemas/bookstore">
+<success>true</success>
+</AddBookResponseMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+INBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookResponseMessage xmlns="http://www.consol.com/schemas/bookstore">
+<success>true</success>
+</AddBookResponseMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+INBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookResponseMessage xmlns="http://www.consol.com/schemas/bookstore">
+<success>true</success>
+</AddBookResponseMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+OUTBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookRequestMessage xmlns="http://www.consol.com/schemas/bookstore">
+<book>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-8931348970</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.143+05:30</registration-date>
+</book>
+</AddBookRequestMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+OUTBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookRequestMessage xmlns="http://www.consol.com/schemas/bookstore">
+<book>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-6354548312</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.704+05:30</registration-date>
+</book>
+</AddBookRequestMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+INBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookResponseMessage xmlns="http://www.consol.com/schemas/bookstore">
+<success>true</success>
+</AddBookResponseMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+INBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookResponseMessage xmlns="http://www.consol.com/schemas/bookstore">
+<success>true</success>
+</AddBookResponseMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+OUTBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookRequestMessage xmlns="http://www.consol.com/schemas/bookstore">
+<book>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-7584277963</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.143+05:30</registration-date>
+</book>
+</AddBookRequestMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+INBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookResponseMessage xmlns="http://www.consol.com/schemas/bookstore">
+<success>true</success>
+</AddBookResponseMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+OUTBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookRequestMessage xmlns="http://www.consol.com/schemas/bookstore">
+<book>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-6705611919</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.143+05:30</registration-date>
+</book>
+</AddBookRequestMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+INBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookResponseMessage xmlns="http://www.consol.com/schemas/bookstore">
+<success>true</success>
+</AddBookResponseMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+OUTBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookRequestMessage xmlns="http://www.consol.com/schemas/bookstore">
+<book>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-9538669321</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.143+05:30</registration-date>
+</book>
+</AddBookRequestMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+INBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookResponseMessage xmlns="http://www.consol.com/schemas/bookstore">
+<success>true</success>
+</AddBookResponseMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+OUTBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookRequestMessage xmlns="http://www.consol.com/schemas/bookstore">
+<book>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-9421969529</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.143+05:30</registration-date>
+</book>
+</AddBookRequestMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+INBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookResponseMessage xmlns="http://www.consol.com/schemas/bookstore">
+<success>true</success>
+</AddBookResponseMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+OUTBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookRequestMessage xmlns="http://www.consol.com/schemas/bookstore">
+<book>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-1378764588</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.143+05:30</registration-date>
+</book>
+</AddBookRequestMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+INBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookResponseMessage xmlns="http://www.consol.com/schemas/bookstore">
+<success>true</success>
+</AddBookResponseMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+OUTBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookRequestMessage xmlns="http://www.consol.com/schemas/bookstore">
+<book>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-5019635008</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.143+05:30</registration-date>
+</book>
+</AddBookRequestMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+INBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<AddBookResponseMessage xmlns="http://www.consol.com/schemas/bookstore">
+<success>true</success>
+</AddBookResponseMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+

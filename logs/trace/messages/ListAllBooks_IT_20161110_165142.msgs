@@ -1,0 +1,243 @@
+======================================================================
+
+OUTBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<ListBooksRequestMessage xmlns="http://www.consol.com/schemas/bookstore"/>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
+INBOUND_MESSAGE:
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+<ListBooksResponseMessage xmlns="http://www.consol.com/schemas/bookstore">
+<books>
+<book>
+<id>24</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-9538669321</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.814+05:30</registration-date>
+</book>
+<book>
+<id>16</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-8740001026</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.595+05:30</registration-date>
+</book>
+<book>
+<id>18</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-6628970023</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.595+05:30</registration-date>
+</book>
+<book>
+<id>21</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-8931348970</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.751+05:30</registration-date>
+</book>
+<book>
+<id>13</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-1492826085</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.595+05:30</registration-date>
+</book>
+<book>
+<id>7</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-2472777499</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:40:22.137+05:30</registration-date>
+</book>
+<book>
+<id>14</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-9398306754</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.595+05:30</registration-date>
+</book>
+<book>
+<id>15</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-2825545340</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.595+05:30</registration-date>
+</book>
+<book>
+<id>5</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-1337575583</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:40:22.137+05:30</registration-date>
+</book>
+<book>
+<id>1</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-3964984445</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:40:22.137+05:30</registration-date>
+</book>
+<book>
+<id>20</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-6354548312</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.751+05:30</registration-date>
+</book>
+<book>
+<id>22</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-7584277963</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.752+05:30</registration-date>
+</book>
+<book>
+<id>8</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-2307060270</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:40:22.137+05:30</registration-date>
+</book>
+<book>
+<id>25</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-9421969529</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.830+05:30</registration-date>
+</book>
+<book>
+<id>17</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-9258303423</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.595+05:30</registration-date>
+</book>
+<book>
+<id>23</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-6705611919</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.783+05:30</registration-date>
+</book>
+<book>
+<id>27</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-5019635008</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.861+05:30</registration-date>
+</book>
+<book>
+<id>3</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-7549644703</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:40:22.137+05:30</registration-date>
+</book>
+<book>
+<id>9</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-7683378683</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:40:22.137+05:30</registration-date>
+</book>
+<book>
+<id>6</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-8484389586</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:40:22.137+05:30</registration-date>
+</book>
+<book>
+<id>10</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-1228697493</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:40:22.137+05:30</registration-date>
+</book>
+<book>
+<id>4</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-2983534268</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:40:22.137+05:30</registration-date>
+</book>
+<book>
+<id>12</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-8166138934</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.579+05:30</registration-date>
+</book>
+<book>
+<id>19</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-2494832086</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.611+05:30</registration-date>
+</book>
+<book>
+<id>26</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-1378764588</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.846+05:30</registration-date>
+</book>
+<book>
+<id>11</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-7951282119</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:51:44.579+05:30</registration-date>
+</book>
+<book>
+<id>2</id>
+<title>Maven: The Definitive Guide</title>
+<author>Mike Loukides, Sonatype</author>
+<isbn>981-5834391183</isbn>
+<year>2008</year>
+<registration-date>2016-11-10T16:40:22.137+05:30</registration-date>
+</book>
+</books>
+</ListBooksResponseMessage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+======================================================================
+
