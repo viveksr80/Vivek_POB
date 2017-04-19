@@ -1,16 +1,15 @@
 pipeline {
   agent any
-  stages {
-      stage('Start') {
-      steps {
-        echo 'Testing...'
-        echo '${env.BUILD_NUMBER}'
-      }
-    }
     stage('App_Build_ST') {
       steps {
-        echo 'Testing...'
+        echo 'Building...'
         echo '${env.BUILD_NUMBER}'
+        git(url: 'ssh://jenkins@gerrit:29418/BlueOceanProject', branch: 'master', credentialsId: 'jenkins (ADOP Jenkins Master)')
+		def mvnHome = tool 'M3'
+        bat(script: 'mvn clean', returnStatus: true)
+        node(label: 'java8')
+        archiveArtifacts '**/*'
+        }
       }
     }
     stage('Unit_Tests_ST') {
@@ -47,7 +46,7 @@ pipeline {
             echo 'Functioanl'
             
           },
-		   "02-Platform_Tests_ST": {
+          "02-Platform_Tests_ST": {
             echo 'Functioanl'
             
           },
@@ -62,7 +61,7 @@ pipeline {
         )
       }
     }
-	stage('End') {
+    stage('Deploy') {
       steps {
         echo 'End'
       }
