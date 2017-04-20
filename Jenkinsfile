@@ -4,7 +4,7 @@ pipeline {
       steps {
         echo 'Building...'
         echo '${env.BUILD_NUMBER}'
-        git(url: 'ssh://jenkins@gerrit:29418/BlueOceanProject', branch: 'master', credentialsId: 'jenkins (ADOP Jenkins Master)')
+        git url: 'ssh://jenkins@gerrit:29418/BlueOceanProject'
 		def mvnHome = tool 'M3'
         bat(script: 'mvn clean', returnStatus: true)
         node(label: 'java8')
