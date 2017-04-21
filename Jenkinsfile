@@ -2,16 +2,16 @@ pipeline {
   agent any
     stage('App_Build_ST') {
       steps {
-        echo 'Building...'
-        echo '${env.BUILD_NUMBER}'
-        git url: 'ssh://jenkins@gerrit:29418/BlueOceanProject'
-		def mvnHome = tool 'M3'
-        bat(script: 'mvn clean', returnStatus: true)
-        node(label: 'java8')
-        archiveArtifacts '**/*'
-        }
-      }
-    }
+			node(label: 'java8') {
+			echo 'Building...'
+			echo '${env.BUILD_NUMBER}'
+			git(url: 'ssh://jenkins@gerrit:29418/BlueOceanProject', branch: 'master', credentialsId: 'jenkins (ADOP Jenkins Master)')
+			checkout scm
+			sh([script:"${tool 'ADOP Maven'}/bin/mvn clean install"])
+			archiveArtifacts '**/*'
+			}
+		}
+     }
     stage('Unit_Tests_ST') {
       steps {
         echo 'Unit_Tests_ST Testing...'
@@ -66,7 +66,6 @@ pipeline {
         echo 'End'
       }
     }
-  }
   post {
     always {
       echo 'I will always say Hello again!'
