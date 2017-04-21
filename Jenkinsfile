@@ -19,7 +19,7 @@ pipeline {
         steps {
 		    node(label: 'java8') {
 			echo "${params.url1}"
-            git(url: "${params.url1}", branch: 'master', credentialsId: 'jenkins (ADOP Jenkins Master)')
+            git(url: "${params.url1}", branch: 'master', credentialsId: 'asic.demo/Ready2work')
             //checkout scm
             sh([script:"${tool 'ADOP Maven'}/bin/mvn compile -DskipTests"])
             //sh "mvn clean install -Dmaven.test.failure.ignore=true"
