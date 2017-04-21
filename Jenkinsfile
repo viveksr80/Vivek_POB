@@ -17,7 +17,14 @@ pipeline {
     }
       stage('App_Build_ST') {
         steps {
-		echo "${params.url1}"
+		    node(label: 'java8') {
+			echo "${params.url1}"
+            git(url: "${params.url1}", branch: 'master', credentialsId: 'jenkins (ADOP Jenkins Master)')
+            //checkout scm
+            sh([script:"${tool 'ADOP Maven'}/bin/mvn compile -DskipTests"])
+            //sh "mvn clean install -Dmaven.test.failure.ignore=true"
+            archiveArtifacts artifacts: '**/*'
+        }
       }
     }
     stage('Unit_Tests_ST') {
