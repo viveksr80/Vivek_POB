@@ -6,7 +6,7 @@ pipeline {
   parameters {
     string(name: 'WORKSPACE_NAME', defaultValue: 'MySecondWebDriverProject', description: 'Who should I say hello to?')
     string(name: 'PROJECT_NAME', defaultValue: 'MySecondWebDriverProject', description: 'Who should I say hello to?')
-    string(name: 'url1', defaultValue: 'http://asic.demo@52.19.50.152/gerrit/ExampleWorkspace/ExampleProject/spring-petclinic', description: 'Gerrit url')
+    //string(name: 'url1', defaultValue: 'http://asic.demo:Ready2work@52.19.50.152/gerrit/ExampleWorkspace/ExampleProject/spring-petclinic', description: 'Gerrit url')
   }
   stages {
     stage('Start') {
@@ -19,6 +19,11 @@ pipeline {
         steps {
 		    node(label: 'java8') {
 			echo "${params.url1}"
+			git(url: 'http://asic.demo@52.19.50.152/gerrit/ExampleWorkspace/ExampleProject/spring-petclinic' branch: 'master', credentialsId: 'asic.demo/Ready2work')
+            //checkout scm
+            sh([script:"${tool 'ADOP Maven'}/bin/mvn compile -DskipTests"])
+            //sh "mvn clean install -Dmaven.test.failure.ignore=true"
+            archiveArtifacts artifacts: '**/*'
             
         }
       }
