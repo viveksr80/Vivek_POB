@@ -1,17 +1,23 @@
 pipeline {
   agent any
-    stage('App_Build_ST') {
-      steps {
-			node(label: 'java8') {
-			echo 'Building...'
-			echo '${env.BUILD_NUMBER}'
-			git(url: 'ssh://jenkins@gerrit:29418/BlueOceanProject', branch: 'master', credentialsId: 'jenkins (ADOP Jenkins Master)')
-			checkout scm
-			sh([script:"${tool 'ADOP Maven'}/bin/mvn clean install"])
-			archiveArtifacts '**/*'
-			}
-		}
-     }
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '3'))
+  }
+  parameters {
+    string(name: 'WORKSPACE_NAME', defaultValue: 'MySecondWebDriverProject', description: 'Who should I say hello to?')
+    string(name: 'PROJECT_NAME', defaultValue: 'MySecondWebDriverProject', description: 'Who should I say hello to?')
+  }
+  stages {
+      stage('App_Build_ST') {
+        steps {
+          node(label: 'java8') {
+            git(url: 'ssh://jenkins@gerrit:29418/BlueOceanProject', branch: 'master', credentialsId: 'jenkins (ADOP Jenkins Master)')
+            checkout scm
+            sh([script:"${tool 'ADOP Maven'}/bin/mvn clean install"])
+            archiveArtifacts artifacts: '**/*'
+        }
+      }
+    }
     stage('Unit_Tests_ST') {
       steps {
         echo 'Unit_Tests_ST Testing...'
@@ -63,21 +69,13 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        echo 'End'
+        echo 'Deploying...'
       }
     }
+  }
   post {
     always {
       echo 'I will always say Hello again!'
-      
     }
-    
-  }
-  options {
-    buildDiscarder(logRotator(numToKeepStr: '3'))
-  }
-  parameters {
-    string(name: 'WORKSPACE_NAME', defaultValue: 'MySecondWebDriverProject', description: 'Who should I say hello to?')
-    string(name: 'PROJECT_NAME', defaultValue: 'MySecondWebDriverProject', description: 'Who should I say hello to?')
   }
 }
