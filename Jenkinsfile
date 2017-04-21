@@ -20,7 +20,7 @@ pipeline {
 		    node(label: 'java8') {
 			echo "${params.url1}"
 			git(url: 'http://asic.demo@52.19.50.152/gerrit/ExampleWorkspace/ExampleProject/spring-petclinic' branch: 'master', credentialsId: 'asic.demo/Ready2work')
-            //checkout scm
+            checkout scm
             sh([script:"${tool 'ADOP Maven'}/bin/mvn compile -DskipTests"])
             //sh "mvn clean install -Dmaven.test.failure.ignore=true"
             archiveArtifacts artifacts: '**/*'
