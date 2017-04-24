@@ -12,7 +12,7 @@ pipeline {
     stage('Start') {
       steps {
         echo 'Pipeline started...'
-        echo env.BUILD_NUMBER
+        echo 'Build Number: ' + env.BUILD_NUMBER
       }
     }
       stage('App_Build_ST') {
@@ -29,20 +29,20 @@ pipeline {
     stage('Unit_Tests_ST') {
       steps {
         echo 'Unit_Tests_ST Testing...'
-        echo '${env.BUILD_NUMBER}'
+        echo 'Build Number: ' + env.BUILD_NUMBER
         deleteDir()
       }
     }
     stage('Code_Analysis_ST') {
       steps {
         echo 'Code_Analysis_ST...'
-        echo '${env.BUILD_NUMBER}'
+        echo 'Build Number: ' + env.BUILD_NUMBER
       }
     }
     stage('Deploy_Environment_ST') {
       steps {
         echo 'Deploy_Environment_ST...'
-		echo '${env.BUILD_NUMBER}'
+		echo 'Build Number: ' + env.BUILD_NUMBER
       }
     }
     stage('Test_Build_ST') {
