@@ -12,7 +12,7 @@ pipeline {
     stage('Start') {
       steps {
         echo 'Pipeline started...'
-        echo '${env.BUILD_NUMBER}'
+        echo env.BUILD_NUMBER
       }
     }
       stage('App_Build_ST') {
