@@ -6,25 +6,23 @@ pipeline {
   parameters {
     string(name: 'WORKSPACE_NAME', defaultValue: 'MySecondWebDriverProject', description: 'Who should I say hello to?')
     string(name: 'PROJECT_NAME', defaultValue: 'MySecondWebDriverProject', description: 'Who should I say hello to?')
-    //string(name: 'url1', defaultValue: 'http://asic.demo:Ready2work@52.19.50.152/gerrit/ExampleWorkspace/ExampleProject/spring-petclinic', description: 'Gerrit url')
+    string(name: 'url1', defaultValue: 'http://asic.demo@52.19.50.152/gerrit/ExampleWorkspace/ExampleProject/spring-petclinic', description: 'Gerrit url')
   }
   stages {
     stage('Start') {
       steps {
-        echo 'Testing...'
+        echo 'Pipeline started...'
         echo '${env.BUILD_NUMBER}'
       }
     }
       stage('App_Build_ST') {
         steps {
 		    node(label: 'java8') {
-			echo "${params.url1}"
-			git(url: 'http://asic.demo@52.19.50.152/gerrit/ExampleWorkspace/ExampleProject/spring-petclinic', branch: 'master', credentialsId: 'asic.demo/Ready2work')
-            checkout scm
+			git(url: "${params.url1}", branch: 'master', credentialsId: 'asic.demo/Ready2work')
+            //checkout scm
             sh([script:"${tool 'ADOP Maven'}/bin/mvn compile -DskipTests"])
             //sh "mvn clean install -Dmaven.test.failure.ignore=true"
-            archiveArtifacts artifacts: '**/*'
-            
+            archiveArtifacts artifacts: '**/*'  
         }
       }
     }
@@ -37,20 +35,21 @@ pipeline {
     }
     stage('Code_Analysis_ST') {
       steps {
-        echo 'Code_Analysis_ST Testing...'
+        echo 'Code_Analysis_ST...'
         echo '${env.BUILD_NUMBER}'
       }
     }
     stage('Deploy_Environment_ST') {
       steps {
-        echo 'Testing Deploy_Environment_ST'
+        echo 'Deploy_Environment_ST...'
+		echo '${env.BUILD_NUMBER}'
       }
     }
     stage('Test_Build_ST') {
       steps {
         node(label: 'All_NT') {
             git(url: 'http://asic.demo@52.19.50.152/gerrit/BlueOceanProject', branch: 'master', credentialsId: 'asic.demo/Ready2work')
-            checkout scm
+            //checkout scm
             bat([script:"${tool 'ADOP Maven'}/bin/mvn clean compile install -DskipTests"])
             archiveArtifacts artifacts: '**/*'
       }
@@ -59,32 +58,27 @@ pipeline {
     stage('Continuous_Testing_ST') {
       steps {
         parallel(
-          "Continuous_Testing_ST": {
-            echo 'Testing...'
-            
-          },
           "01_Functional_Tests_ST": {
-            echo 'Functioanl'
+            echo 'Functional Testing...'
             
           },
           "02-Platform_Tests_ST": {
-            echo 'Functioanl'
+            echo 'Platform Testing...'
             
           },
           "03_BDD_Regression_Tests_ST": {
-            echo 'Testing BDD'
+            echo 'BDD Testing...'
             
           },
           "04-API_Tests_ST": {
-            echo 'Testing...'
-            
+            echo ' API Testing...'
           }
         )
       }
     }
     stage('End') {
       steps {
-        echo 'End'
+        echo 'Pipeline ended...'
       }
     }
   }
