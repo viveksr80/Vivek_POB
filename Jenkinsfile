@@ -54,19 +54,19 @@ pipeline {
         parallel(
           "01_Functional_Tests_ST": {
             echo 'Functional Testing...'
-			try{
 			node(label: 'All_NT') {
 				git(url: 'http://asic.demo@52.19.50.152/gerrit/BlueOceanProject', branch: 'master', credentialsId: 'asic.demo/Ready2work')
 				//checkout scm
 				bat([script:"${tool 'ADOP Maven'}/bin/mvn clean compile install -DskipTests"])
 				archiveArtifacts artifacts: '**/*'
 			}
-			catch(Exception e) {
-				echo e
-			} finally {
-				echo 'finally'
+          } 
+		  post {
+				always {
+					echo 'I will always say Hello again!'
+				}
 			}
-          },
+		  ,
           "02-Platform_Tests_ST": {
             echo 'Platform Testing...'
             
