@@ -45,8 +45,9 @@ pipeline {
       }
     }
     stage('Continuous_Testing_ST') {
-      steps {
-		node(label: 'All_NT') {
+      node(label: 'All_NT') {
+	  steps {
+		
         parallel(
           "01-Functional": {
             echo 'Functional Testing...'
@@ -54,7 +55,7 @@ pipeline {
 				bat([script:'set MAVEN_OPTS = –Xmx2048m'])
 				bat([script:'mvn exec:java -Dexec.mainClass="com.accenture.runner.selenium.SELENIUM_Executor" -Dexec.classpathScope=test'])
 			
-	  },
+			},
           "02-Platform": {
             echo 'Platform Testing...'
 			
