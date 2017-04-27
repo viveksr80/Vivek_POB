@@ -45,9 +45,10 @@ pipeline {
       }
     }
     stage('Continuous_Testing_ST') {
-      node(label: 'All_NT') {
+	  agent {
+		node { label 'All_NT' }
+		}
 	  steps {
-		
         parallel(
           "01-Functional": {
             echo 'Functional Testing...'
@@ -78,7 +79,6 @@ pipeline {
 				}
 			)
 		}
-      }
     }
     stage('Pre-Prod-Deploy') {
       steps {
