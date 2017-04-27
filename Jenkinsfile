@@ -70,8 +70,8 @@ pipeline {
 				bat([script:'mvn jetty:stop'])
 				}
 			)
+			archiveArtifacts artifacts: '**/report/AAFT Execution Report_*.html'
 		}
-		archiveArtifacts artifacts: '**/report/AAFT Execution Report_*.html'
     }
     stage('Pre-Prod-Deploy') {
       steps {
