@@ -54,6 +54,7 @@ pipeline {
             echo 'Functional Testing...'
 				bat([script:'set MAVEN_OPTS = –Xmx2048m'])
 				bat([script:'mvn exec:java -Dexec.mainClass="com.accenture.runner.selenium.SELENIUM_Executor" -Dexec.classpathScope=test'])
+				archiveArtifacts artifacts: '**/report/AAFT Execution Report_*.html'
 			},
           "02-Platform": {
             echo 'Platform Testing...'
@@ -70,7 +71,6 @@ pipeline {
 				bat([script:'mvn jetty:stop'])
 				}
 			)
-			archiveArtifacts artifacts: '**/report/AAFT Execution Report_*.html'
 		}
     }
     stage('Pre-Prod-Deploy') {
