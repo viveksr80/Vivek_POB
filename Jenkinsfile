@@ -8,12 +8,10 @@ pipeline {
         steps {
 		echo 'Build Number: ' + env.BUILD_NUMBER
 		 node(label: 'java8') {
-		 withCredentials([usernamePassword(credentialsId: 'f8e5a0d0-b489-4884-ace9-a74149ba8a30', passwordVariable: 'Ready2work', usernameVariable: 'asic.demo')]) {
 			git(url: 'http://52.19.50.152/gerrit/ExampleWorkspace/ExampleProject/spring-petclinic', branch: 'master', credentialsId: 'f8e5a0d0-b489-4884-ace9-a74149ba8a30')
             		sh([script:"${tool 'ADOP Maven'}/bin/mvn compile -DskipTests"])
             		//sh "mvn clean install -Dmaven.test.failure.ignore=true"
-            		archiveArtifacts artifacts: '**/*'  
-				}
+            		archiveArtifacts artifacts: '**/*'
 			}
       	}
     }
@@ -41,7 +39,7 @@ pipeline {
     stage('Test_Build_ST') {
       steps {
         node(label: 'All_NT') {
-            git(url: 'http://asic.demo@52.19.50.152/gerrit/BlueOceanProject', branch: 'master', credentialsId: '')
+            git(url: 'http://52.19.50.152/gerrit/BlueOceanProject', branch: 'master', credentialsId: 'f8e5a0d0-b489-4884-ace9-a74149ba8a30')
             bat([script:"${tool 'ADOP Maven'}/bin/mvn clean compile install -DskipTests"])
 	}
       }
