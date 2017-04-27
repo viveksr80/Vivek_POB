@@ -52,30 +52,22 @@ pipeline {
         parallel(
           "01-Functional": {
             echo 'Functional Testing...'
-			
 				bat([script:'set MAVEN_OPTS = –Xmx2048m'])
 				bat([script:'mvn exec:java -Dexec.mainClass="com.accenture.runner.selenium.SELENIUM_Executor" -Dexec.classpathScope=test'])
-			
 			},
           "02-Platform": {
             echo 'Platform Testing...'
-			
 				bat([script:'mvn exec:java -Dexec.mainClass="com.accenture.runner.platform.PLATFORM_Executor" -Dexec.classpathScope=test'])
-			
           },
           "03-BDD": {
             echo 'BDD Testing...'
-				
 				bat([script:'mvn exec:java -Dexec.mainClass="com.accenture.runner.bdd.BDD_Executor" -Dexec.classpathScope=test'])
-			
           },
           "04-API": {
             echo ' API Testing...'
-			
 				bat([script:'start /b mvn jetty:run'])
 				bat([script:'mvn integration-test'])
 				bat([script:'mvn jetty:stop'])
-			
 				}
 			)
 		}
