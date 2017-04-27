@@ -8,7 +8,7 @@ pipeline {
         steps {
 		echo 'Build Number: ' + env.BUILD_NUMBER
 		 node(label: 'java8') {
-			git(url: 'http://asic.demo@52.19.50.152/gerrit/ExampleWorkspace/ExampleProject/spring-petclinic', branch: 'master', credentialsId: '')
+			git(url: 'http://asic.demo@52.19.50.152/gerrit/ExampleWorkspace/ExampleProject/spring-petclinic', branch: 'master', credentialsId: 'asic.demo-Ready2work')
             		sh([script:"${tool 'ADOP Maven'}/bin/mvn compile -DskipTests"])
             		//sh "mvn clean install -Dmaven.test.failure.ignore=true"
             		archiveArtifacts artifacts: '**/*'  
