@@ -71,6 +71,7 @@ pipeline {
 				}
 			)
 		}
+		archiveArtifacts artifacts: '**/report/AAFT Execution Report_*.html'
     }
     stage('Pre-Prod-Deploy') {
       steps {
