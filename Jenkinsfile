@@ -62,12 +62,14 @@ pipeline {
           "03-BDD": {
             echo 'BDD Testing...'
 			node(label: 'All_NT') {
+				checkout scm
 				bat([script:'mvn exec:java -Dexec.mainClass="com.accenture.runner.bdd.BDD_Executor" -Dexec.classpathScope=test'])
 			}
         },
           "04-API": {
             echo ' API Testing...'
 			node(label: 'All_NT') {
+				checkout scm
 				bat([script:'start /b mvn jetty:run'])
 				bat([script:'mvn integration-test'])
 				bat([script:'mvn jetty:stop'])
