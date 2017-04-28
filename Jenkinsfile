@@ -27,12 +27,6 @@ pipeline {
       steps {
 		echo 'Code_Analysis_ST...'
         echo 'Build Number: ' + env.BUILD_NUMBER
-		sshagent(['adop-jenkins-master']) {
-			withSonarQubeEnv('My SonarQube Server') {
-				sh([script:"mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar"])
-				//sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
-			}
-        }
       }
     }
     stage('Deploy_Environment_ST') {
@@ -68,14 +62,12 @@ pipeline {
           "03-BDD": {
             echo 'BDD Testing...'
 			node(label: 'All_NT') {
-				checkout scm
 				bat([script:'mvn exec:java -X -Dexec.mainClass="com.accenture.runner.bdd.BDD_Executor" -Dexec.classpathScope=test'])
 			}
         },
           "04-API": {
             echo ' API Testing...'
 			node(label: 'All_NT') {
-				checkout scm
 				bat([script:'start /b mvn jetty:run'])
 				bat([script:'mvn integration-test'])
 				bat([script:'mvn jetty:stop'])
