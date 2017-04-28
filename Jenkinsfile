@@ -27,7 +27,6 @@ pipeline {
       steps {
 		echo 'Code_Analysis_ST...'
         echo 'Build Number: ' + env.BUILD_NUMBER
-		def scannerHome = tool 'SonarQube Scanner 2.8';
 		sshagent(['adop-jenkins-master']) {
 			withSonarQubeEnv('My SonarQube Server') {
 				sh([script:"mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar"])
