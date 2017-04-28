@@ -50,20 +50,20 @@ pipeline {
 			echo 'Functional Testing...'
 			node(label: 'All_NT') {
 				bat([script:'set MAVEN_OPTS = –Xmx2048m'])
-				bat([script:'mvn exec:java -Dexec.mainClass="com.accenture.runner.selenium.SELENIUM_Executor" -Dexec.classpathScope=test'])
+				bat([script:'mvn exec:java -X -Dexec.mainClass="com.accenture.runner.selenium.SELENIUM_Executor" -Dexec.classpathScope=test'])
 			}
 		},
           "02-Platform": {
             echo 'Platform Testing...'
 			node(label: 'All_NT') {
-				bat([script:'mvn exec:java -Dexec.mainClass="com.accenture.runner.platform.PLATFORM_Executor" -Dexec.classpathScope=test'])
+				bat([script:'mvn exec:java -X -Dexec.mainClass="com.accenture.runner.platform.PLATFORM_Executor" -Dexec.classpathScope=test'])
 			}
         },
           "03-BDD": {
             echo 'BDD Testing...'
 			node(label: 'All_NT') {
 				checkout scm
-				bat([script:'mvn exec:java -Dexec.mainClass="com.accenture.runner.bdd.BDD_Executor" -Dexec.classpathScope=test'])
+				bat([script:'mvn exec:java -X -Dexec.mainClass="com.accenture.runner.bdd.BDD_Executor" -Dexec.classpathScope=test'])
 			}
         },
           "04-API": {
