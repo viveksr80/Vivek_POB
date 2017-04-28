@@ -27,11 +27,10 @@ pipeline {
       steps {
 		echo 'Code_Analysis_ST...'
         echo 'Build Number: ' + env.BUILD_NUMBER
-		def SONAR_HOST_URL = 'http://sonar:9000/sonar/'
 		sshagent(['adop-jenkins-master']) {
-		env.sonarHome = tool name: 'scanner-2.4', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-		withSonarQubeEnv('sonar.installation') {
-			sh "${sonarHome}/bin/sonar-runner -Dsonar.host.url=${SONAR_HOST_URL} -Dsonar.projectName='ASIC-CT/Touchless-Testing' -Dsonar.projectVersion=env.BUILD_NUMBER -Dsonar.projectKey='asic-ct-touchless-testing' -Dsonar.sources='src/main/java' -Dsonar.language=java -Dsonar.sourceEncoding=UTF-8 -Dsonar.sonar.scm.enabled=false"
+			withSonarQubeEnv('My SonarQube Server') {
+				sh([script:"${tool 'ADOP Maven'}/bin/mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar"])
+				//sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
 			}
         }
       }
