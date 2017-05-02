@@ -37,12 +37,7 @@ pipeline {
 				
 			archiveArtifacts artifacts: '**/*' 
 			
-			echo WORKSPACE + '/*'
-			
-			//echo WORKSPACE/target/*
-			
-			//echo WORKSPACE/target/petclinic.war
-			
+			echo WORKSPACE
 			
 		}
       }
@@ -57,34 +52,39 @@ pipeline {
       }
     }
 	stage('Continuous_Testing_ST') {
+	agent{
+		node {
+			label: 'All_NT'
+		 }
+	}
 	steps {
 	  parallel(
 		"01-Functional": {
 			echo 'Functional Testing...'
-			node(label: 'All_NT') {
+			
 				bat([script:'set MAVEN_OPTS = –Xmx2048m'])
 				bat([script:'mvn exec:java -X -Dexec.mainClass="com.accenture.runner.selenium.SELENIUM_Executor" -Dexec.classpathScope=test'])
-			}
+			
 		},
           "02-Platform": {
             echo 'Platform Testing...'
-			node(label: 'All_NT') {
+			
 				bat([script:'mvn exec:java -X -Dexec.mainClass="com.accenture.runner.platform.PLATFORM_Executor" -Dexec.classpathScope=test'])
-			}
+			
         },
           "03-BDD": {
             echo 'BDD Testing...'
-			node(label: 'All_NT') {
+			
 				bat([script:'mvn exec:java -X -Dexec.mainClass="com.accenture.runner.bdd.BDD_Executor" -Dexec.classpathScope=test'])
-			}
+			
         },
           "04-API": {
             echo ' API Testing...'
-			node(label: 'All_NT') {
+			
 				bat([script:'start /b mvn jetty:run'])
 				bat([script:'mvn integration-test'])
 				bat([script:'mvn jetty:stop'])
-			}
+			
         }
         )
       }
