@@ -37,11 +37,11 @@ pipeline {
 				
 			archiveArtifacts artifacts: '**/*' 
 			
-			echo WORKSPACE/*
+			echo WORKSPACE + '/*'
 			
-			echo WORKSPACE/target/*
+			//echo WORKSPACE/target/*
 			
-			echo WORKSPACE/target/petclinic.war
+			//echo WORKSPACE/target/petclinic.war
 			
 			
 		}
