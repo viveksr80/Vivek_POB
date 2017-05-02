@@ -34,6 +34,12 @@ pipeline {
 		node(label:'docker'){
 			echo 'Deploy_Environment_ST...'
 			echo 'Build Number: ' + env.BUILD_NUMBER
+				
+			archiveArtifacts artifacts: '**/*' 
+			
+			echo ${WORKSPACE}
+			
+			
 		}
       }
     }
