@@ -37,7 +37,7 @@ pipeline {
 				
 			archiveArtifacts artifacts: '**/*' 
 			
-			echo ${WORKSPACE}
+			echo WORKSPACE
 			
 			
 		}
