@@ -52,11 +52,9 @@ pipeline {
       }
     }
 	stage('Continuous_Testing_ST') {
-	agent{
-		node {
-			label: 'All_NT'
-		 }
-	}
+	agent {
+		node { label 'All_NT' }
+		}
 	steps {
 	  parallel(
 		"01-Functional": {
