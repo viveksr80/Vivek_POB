@@ -32,17 +32,6 @@ pipeline {
     stage('Deploy_Environment_ST') {
       steps {
 		node(label:'docker'){
-			deleteDir()
-			step ([$class: 'CopyArtifact', projectName: 'App_Build_ST',	filter: 'target/petclinic.war'])
-			sh '''set +x
-			echo "
-			FROM tomcat:8.0
-			ADD target/petclinic.war /usr/local/tomcat/webapps/
-			" > ${WORKSPACE}/Dockerfile
-			export REPO_NAME="$(echo ${PROJECT_NAME} | tr '/' '_' | tr '[:upper:]' '[:lower:]')"
-			docker build -t ${REPO_NAME}/adop-foss-java:0.0.${B} .
-			echo "New image has been build - ${REPO_NAME}/adop-foss-java:0.0.${B}"
-			set -x'''
 			echo 'Deploy_Environment_ST...'
 			echo 'Build Number: ' + env.BUILD_NUMBER
 		}
